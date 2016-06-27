@@ -24,5 +24,12 @@ Route::get('/post/{post}', 'HomeController@view');
 Route::post('/post/add', 'PostsController@add');
 
 // Products
-Route::get('/product/new', 'ProductsController@create');
+Route::get('/product/{product}/edit', 'ProductsController@edit')->middleware('auth');
 Route::get('/product/{slug}', 'ProductsController@view');
+Route::get('/product/{product}/buy', 'ProductsController@buy');
+
+Route::get('/product/new', 'ProductsController@create')->middleware('auth');
+Route::post('/product/add', 'ProductsController@add')->middleware('auth');
+
+// dashboard
+Route::get('/dashboard', 'DashboardController@index')->middleware('auth');

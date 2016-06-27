@@ -28,7 +28,23 @@ class ProductsController extends Controller
     	return view('products.new');
     }
 
-    public function add(Request $request){
+    public function edit(Product $product)
+    {
+    	return $product;
+    }
 
+    public function add(Request $request){
+    	$product = new Product;
+    	$product->title = $request['title'];
+    	$product->slug = str_slug(' ' . uniqid() . ' ' . $request['title'], '-');
+    	$product->image = uniqid();
+    	$product->description = $request['description'];
+    	$product->body = $request['body'];
+    	$product->stock = $request['stock'];
+    	$product->price = $request['price'];
+    	$product->active = $request['active'] == 1;
+    	$product->save();
+
+    	return redirect('/product/' . $product->slug );
     }
 }

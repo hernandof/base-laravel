@@ -8,7 +8,7 @@
         <div class="col-md-6">
             @foreach($products as $product)
                 <div class="thumbnail">
-                    <img class="img-responsive" src="http://lorempixel.com/600/200" alt="{{ $product->title }}">
+                    <img class="img-responsive" src="http://placehold.it/600x200" alt="{{ $product->title }}">
                     <div class="caption">
                         <h3>{{ $product->title }}</h3>
                         <p><i>{{ $product->description }}</i></p>

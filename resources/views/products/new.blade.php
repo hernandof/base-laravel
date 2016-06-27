@@ -5,14 +5,14 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
 
-			<form action="/post/add" method="POST" role="form">
+			<form action="/product/add" method="POST" role="form">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 				<legend>New Product</legend>
 			
 				<div class="form-group">
 					<label for="title">Title</label>
-					<input type="text" name="title" id="input" class="form-control" value="" required="required" pattern="" title="">
+					<input type="text" name="title" id="input" class="form-control" value="" required="required">
 				</div>
 				
 				<div class="form-group">
@@ -37,7 +37,7 @@
 
 				<div class="checkbox">
 					<label>
-						<input active type="checkbox" value="1">
+						<input checked name="active" type="checkbox" value="1">
 						Active
 					</label>
 				</div>
