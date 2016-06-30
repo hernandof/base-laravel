@@ -13,6 +13,12 @@ class DashboardController extends Controller
 {
     public function index()
     {
-    	# code...
+    	$products = Product::get();
+    	$posts = Post::get();
+    	
+    	return view('dashboard.index', [
+    		'products' => $products ,
+    		'posts' => $posts ,
+    	]);
     }
 }

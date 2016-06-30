@@ -19,7 +19,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 
 // Posts
-Route::get('/post/new', 'PostsController@write');
+Route::get('/post/new', 'PostsController@write')->middleware('auth');
 Route::get('/post/{post}', 'HomeController@view');
 Route::post('/post/add', 'PostsController@add');
 
