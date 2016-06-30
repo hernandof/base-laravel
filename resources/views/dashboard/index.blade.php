@@ -3,9 +3,14 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-3">
+            <div class="list-group">
+              <a href="{{ route('new_product')}}" class="list-group-item">Add Product</a>
+              <a href="/product/add" class="list-group-item">Sales</a>
+              <a href="{{ route('new_post')}}" class="list-group-item">Add Post</a>
+            </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-5">
             @foreach($products as $product)
                 <div class="thumbnail">
                     <img class="img-responsive" src="http://placehold.it/600x200" alt="{{ $product->title }}">
